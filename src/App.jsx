@@ -32,8 +32,9 @@ function App() {
         <tbody>
           {/* row 1 */}
         {
-          users.map(user => <UserRow 
+          users.map((user, idx) => <UserRow 
           key={user._id}
+          index={idx}
           user={user}
           users={users}
           setUsers={setUsers}

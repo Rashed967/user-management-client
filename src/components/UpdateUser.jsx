@@ -18,25 +18,27 @@ const UpdateUser = () => {
         const status = form.status.value;
         const user = {name, email, gender, status}
 
+        console.log(user);
+
         // send form data to the server 
-        fetch(`http://localhost:5000/users/${_id}`, {
-            method : "PUT",
-            headers : {'content-type' : 'application/json'},
-            body : JSON.stringify(user)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount > 0){
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'user info created',
-                    showConfirmButton: false,
-                    timer: 1500
-                  }) 
-                  form.reset();
-            }
-        })
+        // fetch(`http://localhost:5000/users/${_id}`, {
+        //     method : "PUT",
+        //     headers : {'content-type' : 'application/json'},
+        //     body : JSON.stringify(user)
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     if(data.modifiedCount > 0){
+        //         Swal.fire({
+        //             position: 'center',
+        //             icon: 'success',
+        //             title: 'user info created',
+        //             showConfirmButton: false,
+        //             timer: 1500
+        //           }) 
+        //           form.reset();
+        //     }
+        // })
         
     }
 
@@ -69,7 +71,7 @@ const UpdateUser = () => {
                         <label className="">
                             <span className="mr-3">Male</span>
                         </label>
-                        <input  type="radio" value={"Male"} name="gender" className="radio radio-success"  />
+                        <input defaultChecked={gender === "Male" ? true : false}  type="radio" value="Male"  name="gender" className="radio radio-success"  />
                         </div>
 
                        
@@ -77,7 +79,7 @@ const UpdateUser = () => {
                         <label className="">
                             <span className="mr-3">Female</span>
                         </label>
-                        <input type="radio" value={"Female"} name="gender" className="radio radio-success" />
+                        <input type="radio" value="Female" defaultChecked={gender === "Female" ? true : false} name="gender" className="radio radio-success" />
                         <div/>
                     </div>
                     </div>

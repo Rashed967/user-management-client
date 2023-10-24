@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const UserRow = ({user, users, setUsers}) => {
+const UserRow = ({user, users, setUsers, index}) => {
     const {name, email, gender, status, _id} = user;
     
    
@@ -49,7 +49,7 @@ const UserRow = ({user, users, setUsers}) => {
     }
     return (
         <tr>
-        <th></th>
+        <th>{index+1}</th>
         <td>{name}</td>
         <td>{email}</td>
         <td>{gender}</td>
