@@ -1,9 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const UserRow = ({user, users, setUsers}) => {
-    const {name, email, gender, status} = user;
+    const {name, email, gender, status, _id} = user;
+    
+   
     
 
     // delte user 
@@ -45,13 +49,15 @@ const UserRow = ({user, users, setUsers}) => {
     }
     return (
         <tr>
-        <th>1</th>
+        <th></th>
         <td>{name}</td>
         <td>{email}</td>
         <td>{gender}</td>
         <td>{status}</td>
         <th className="space-x-4">
+            <Link to={`updateUser/${_id}`}>
             <button className="btn btn-sm btn-success">Edit</button>
+            </Link>
             <button className="btn btn-sm btn-error" onClick={() => deleteUser(user._id)}>Delete</button>
         </th>
       </tr>

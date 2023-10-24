@@ -7,6 +7,8 @@ import UserRow from './components/UserRow'
 function App() {
   const loadeduser = useLoaderData()
   const [users, setUsers] = useState(loadeduser)
+  // const [count, setCount] = useState(0)
+ 
 
   return (
     <>
@@ -37,6 +39,7 @@ function App() {
           setUsers={setUsers}
           />)
         }
+       
         </tbody>
       </table>
     </div>
