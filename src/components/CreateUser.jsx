@@ -14,26 +14,27 @@ const CreateUser = () => {
         const gender = form.gender.value;
         const status = form.status.value;
         const user = {name, email, gender, status}
+        console.log(user);
 
         // send form data to the server 
-        fetch('http://localhost:5000/users', {
-            method : "POST",
-            headers : {'content-type' : 'application/json'},
-            body : JSON.stringify(user)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.insertedId){
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'New user created',
-                    showConfirmButton: false,
-                    timer: 1500
-                  }) 
-                  form.reset();
-            }
-        })
+        // fetch('http://localhost:5000/users', {
+        //     method : "POST",
+        //     headers : {'content-type' : 'application/json'},
+        //     body : JSON.stringify(user)
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     if(data.insertedId){
+        //         Swal.fire({
+        //             position: 'center',
+        //             icon: 'success',
+        //             title: 'New user created',
+        //             showConfirmButton: false,
+        //             timer: 1500
+        //           }) 
+        //           form.reset();
+        //     }
+        // })
         
     }
     return (
@@ -64,15 +65,13 @@ const CreateUser = () => {
                         <label className="">
                             <span className="">Male</span>
                         </label>
-                        <input type="radio" value={"Male"} name="gender" className="radio radio-success" checked />
+                        <input type="radio" value="Male" name="gender" className="radio radio-success"/>
                         </div>
-
-                       
                         <div className="flex items-center">
                         <label className="">
                             <span className="">Female</span>
                         </label>
-                        <input type="radio" value={"Female"} name="gender" className="radio radio-success" />
+                        <input type="radio" value="Female" name="gender" className="radio radio-success" />
                         <div/>
                     </div>
                     </div>
@@ -86,7 +85,7 @@ const CreateUser = () => {
                         <label className="">
                             <span className="">Active</span>
                         </label>
-                        <input type="radio" value={"Active"} name="status" className="radio radio-success" checked />
+                        <input type="radio" value={"Active"} name="status" className="radio radio-success" defaultChecked />
                         </div>
 
 
