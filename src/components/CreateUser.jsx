@@ -63,13 +63,13 @@ const CreateUser = () => {
 
                       <div className="flex items-center">
                         <label className="">
-                            <span className="">Male</span>
+                            <span className="mr-3">Male</span>
                         </label>
                         <input type="radio" value="Male" name="gender" className="radio radio-success"/>
                         </div>
                         <div className="flex items-center">
                         <label className="">
-                            <span className="">Female</span>
+                            <span className="mr-3">Female</span>
                         </label>
                         <input type="radio" value="Female" name="gender" className="radio radio-success" />
                         <div/>
@@ -83,7 +83,7 @@ const CreateUser = () => {
 
                       <div className="flex items-center">
                         <label className="">
-                            <span className="">Active</span>
+                            <span className="mr-3">Active</span>
                         </label>
                         <input type="radio" value={"Active"} name="status" className="radio radio-success" defaultChecked />
                         </div>
@@ -91,7 +91,7 @@ const CreateUser = () => {
 
                         <div className="flex items-center">
                         <label className="">
-                            <span className="">Inactive</span>
+                            <span className="mr-3">Inactive</span>
                         </label>
                         <input type="radio" value={"Inactive"} name="status" className="radio radio-success" />
                         <div/>
@@ -100,7 +100,7 @@ const CreateUser = () => {
 
                     <div className=" w-full">
                         
-                    <button className="btn btn-info w-full">Info</button>
+                    <button className="btn btn-info w-full">Create</button>
                     </div>
                     
             </div>
